@@ -1,0 +1,4 @@
+Explanation
+provider "aws": This block configures the AWS provider, which is required to manage resources on AWS.
+region: Specifies the AWS region where the resources will be created. It references the region variable defined in variables.tf.
+The provider.tf file is straightforward, as it mainly sets up the connection to the AWS environment using the specified region.

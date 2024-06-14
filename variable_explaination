@@ -1,0 +1,11 @@
+Explanation
+variable "region": Defines the AWS region where the resources will be created. The default is set to us-east-1, but it can be overridden.
+
+variable "vpc_cidr": Specifies the CIDR block for the VPC. The default is 10.0.0.0/16, which can be adjusted as needed.
+
+variable "vpc_name": Defines a name for the VPC. The default is my-vpc, but this can be customized.
+
+variable "public_subnets": A list of CIDR blocks for the public subnets. The default is two subnets with 10.0.1.0/24 and 10.0.2.0/24, which can be modified to fit your requirements.
+
+variable "availability_zones": A list of availability zones where the subnets will be created. The default includes us-east-1a and us-east-1b. This list should match the number of subnets.
+

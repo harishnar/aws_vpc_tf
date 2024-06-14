@@ -1,0 +1,17 @@
+Explanation
+output "vpc_id":
+
+description: Provides a brief description of the output.
+value: Specifies the value to be outputted, which in this case is the ID of the VPC (aws_vpc.main.id).
+output "public_subnet_ids":
+
+description: Describes the output, which is the list of public subnet IDs.
+value: Outputs the IDs of the public subnets. The [*] syntax is used to get all the subnet IDs from the aws_subnet.public resource.
+output "internet_gateway_id":
+
+description: Describes the output, which is the ID of the internet gateway.
+value: Outputs the ID of the internet gateway (aws_internet_gateway.igw.id).
+output "public_route_table_id":
+
+description: Describes the output, which is the ID of the public route table.
+value: Outputs the ID of the public route table (aws_route_table.public.id).

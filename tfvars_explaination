@@ -1,0 +1,6 @@
+Explanation
+region: Specifies the AWS region where the resources will be created. Here, it's set to us-west-2.
+vpc_cidr: Defines the CIDR block for the VPC. It's set to 10.1.0.0/16.
+vpc_name: Specifies the name of the VPC. It's set to my-custom-vpc.
+public_subnets: Sets the CIDR blocks for the public subnets. Two subnets are defined with 10.1.1.0/24 and 10.1.2.0/24.
+availability_zones: Lists the availability zones where the subnets will be created. It includes us-west-2a and us-west-2b.

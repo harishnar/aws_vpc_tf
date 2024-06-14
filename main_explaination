@@ -1,0 +1,33 @@
+Explanation
+provider "aws": Specifies the AWS provider and the region where the resources will be created. The region is defined in the variables file (var.region).
+
+resource "aws_vpc" "main": Defines the VPC resource.
+
+cidr_block: The IP range for the VPC, specified in the variables file (var.vpc_cidr).
+tags: Adds tags to the VPC for identification, including a name tag from the variables file (var.vpc_name).
+resource "aws_subnet" "public": Creates public subnets within the VPC.
+
+count: Creates a number of subnets based on the length of the public_subnets variable.
+vpc_id: The ID of the VPC where the subnet will be created.
+cidr_block: The IP range for the subnet, from the public_subnets variable.
+map_public_ip_on_launch: Enables public IP addresses for instances in the subnet.
+availability_zone: Specifies the availability zone for the subnet.
+tags: Tags for the subnet, including a name tag.
+resource "aws_internet_gateway" "igw": Creates an internet gateway for the VPC.
+
+vpc_id: The ID of the VPC where the internet gateway will be attached.
+tags: Tags for the internet gateway, including a name tag.
+resource "aws_route_table" "public": Creates a route table for the VPC.
+
+vpc_id: The ID of the VPC where the route table will be created.
+tags: Tags for the route table, including a name tag.
+resource "aws_route" "default_route": Defines a route in the route table to route traffic to the internet via the internet gateway.
+
+route_table_id: The ID of the route table.
+destination_cidr_block: The destination for the route (0.0.0.0/0 for all traffic).
+gateway_id: The ID of the internet gateway.
+resource "aws_route_table_association" "public": Associates the subnets with the route table.
+
+count: Creates an association for each subnet.
+subnet_id: The ID of the subnet.
+route_table_id: The ID of the route table.

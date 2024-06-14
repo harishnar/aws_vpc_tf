@@ -1,0 +1,7 @@
+Explanation
+version: The version of the Terraform state file format.
+terraform_version: The version of Terraform that generated the state file.
+serial: A unique number for each state file, which increases with each update.
+lineage: A unique identifier for the configuration that generated this state.
+outputs: Contains the output values defined in outputs.tf.
+resources: Provides detailed information about the managed resources, including their attributes, dependencies, and provider information.
